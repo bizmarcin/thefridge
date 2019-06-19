@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block zawartosc %}
+  <div class="card-body">
+              <h2>Find recipie</h2>
+              <p>Type something in the input field to search the table:</p>
+              <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <th>Title</th>
+                  <th>Directions</th>
+                  <th>Details</th>
+                  <th>Delete</th>
+               </thead>
+
+                <tbody id="findTable">
+               {% for row in rows %}
+                  <tr>
+                     <td>{{ row.Title }}</td>
+                     <td> {{ row.Directions }}</td>
+                     <td><a href="/details/{{ row.Id }}"><button type="button" class="btn btn-primary">Details</button></a></td>
+                     <td><a href="#" data-toggle="modal" data-target="#deleteConfirm_{{ row.Id }}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                      <!-- Settings Modal-->
+                      <div class="modal fade" id="deleteConfirm_{{ row.Id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="settingsModalLabel">Delete confirmation</h5>
+                              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Confirm to delete...
+                              {{ row.Title }}
+                            </div>
+                            <div class="modal-footer">
+                              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                              <a class="btn btn-danger" href="/delete_rec/{{ row.Id }}">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </tr>
+               {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+
+{% block zawartosc %}
+<div class="card-body">
+              {% if message is not none %}
+                <div class="alert alert-danger">{{ message }}</div>
+              {% endif %}
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Alm. Type</th>
+                      <th>Value</th>
+                      <th>Message</th>
+                      <th>Commit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <form method="POST" action="">
+                      <tr>
+                         <td>
+                             <select class="form-control" name="prod_name" id="prod_name">
+                              {% for row in product_names %}
+                                <option class="form-control" value="{{row.name}}">{{row.name}}</option>
+                              {% endfor %}
+                            </select>
+                         </td>
+                         <td>
+                             <select class="form-control" name="type">
+                              {% for row1 in alarm_types %}
+                                <option class="form-control" value="{{row1.name}}">{{row1.name}}</option>
+                              {% endfor %}
+                            </select>
+                         </td>
+                         <td><input class="form-control", name="quantity", value="0", alt="Product quantyty"></td>
+                          <td>
+                              <input class="form-control", name="message", value="", alt="Alarm message"></td>
+                          </td>
+                          <td><input class="btn btn-primary" type="submit" value="Add"></td>
+                      </tr>
+                      </form>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock %}

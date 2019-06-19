@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+
+{% block zawartosc %}
+ <div class="card-body">
+    <h2>{{ rows.Title }}</h2> <h6>Category: {{ rows.Category }}</h6>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <tbody id="findTable">
+            <tr>
+                     <td>
+                         {% if rows.Quantity|length %}
+                            <li>{{ rows.Quantity }} {{ rows.Unit01 }} {{ rows.Ingredient01 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity02|length %}
+                            <li>{{ rows.Quantity02 }} {{ rows.Unit02 }} {{ rows.Ingredient02 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity03|length %}
+                            <li>{{ rows.Quantity03 }} {{ rows.Unit03 }} {{ rows.Ingredient03 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity04|length %}
+                            <li>{{ rows.Quantity04 }} {{ rows.Unit04 }} {{ rows.Ingredient04 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity05|length %}
+                            <li>{{ rows.Quantity05 }} {{ rows.Unit05 }} {{ rows.Ingredient05 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity06|length %}
+                            <li>{{ rows.Quantity06 }} {{ rows.Unit06 }} {{ rows.Ingredient06 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity07|length %}
+                            <li>{{ rows.Quantity07 }} {{ rows.Unit07 }} {{ rows.Ingredient07 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity08|length %}
+                            <li>{{ rows.Quantity08 }} {{ rows.Unit08 }} {{ rows.Ingredient08 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity09|length %}
+                            <li>{{ rows.Quantity09 }} {{ rows.Unit09 }} {{ rows.Ingredient09 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity10|length %}
+                            <li>{{ rows.Quantity10 }} {{ rows.Unit10 }} {{ rows.Ingredient10 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity11|length %}
+                            <li>{{ rows.Quantity11 }} {{ rows.Unit11 }} {{ rows.Ingredient11 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity12|length %}
+                            <li>{{ rows.Quantity12 }} {{ rows.Unit12 }} {{ rows.Ingredient12 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity13|length %}
+                            <li>{{ rows.Quantity13 }} {{ rows.Unit13 }} {{ rows.Ingredient13 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity14|length %}
+                            <li>{{ rows.Quantity14 }} {{ rows.Unit14 }} {{ rows.Ingredient14 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity15|length %}
+                            <li>{{ rows.Quantity15 }} {{ rows.Unit15 }} {{ rows.Ingredient15 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity16|length %}
+                            <li>{{ rows.Quantity16 }} {{ rows.Unit16 }} {{ rows.Ingredient16 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity17|length %}
+                            <li>{{ rows.Quantity17 }} {{ rows.Unit17 }} {{ rows.Ingredient17 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity18|length %}
+                            <li>{{ rows.Quantity18 }} {{ rows.Unit18 }} {{ rows.Ingredient18 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity19|length %}
+                            <li>{{ rows.Quantity19 }} {{ rows.Unit19 }} {{ rows.Ingredient19 }}</li>
+                         {% endif %}
+
+                         {% if rows.Quantity20|length %}
+                            <li>{{ rows.Quantity20 }} {{ rows.Unit20 }} {{ rows.Ingredient20 }}</li>
+                         {% endif %}
+                     </td>
+            </tr>
+            <tr>
+                <td> {{ rows.Directions }}</td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+{% endblock %}

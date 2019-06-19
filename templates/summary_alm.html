@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block zawartosc %}
+            <div class="card-body">
+              <h2>Alarm summary</h2>
+              <p>Type something in the input field to search the table:</p>
+              <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <th>Product</th>
+                  <th>Equation</th>
+                  <th>Value</th>
+                  <th>Message</th>
+               </thead>
+
+                <tbody id="findTable">
+               {% for alarm in alarms %}
+                  <tr>
+                     <td>{{ alarm.name }}</td>
+                     <td> {{ alarm.eq }}</td>
+                     <td> {{ alarm.val }}</td>
+                     <td> {{ alarm.message }}</td>
+                  </tr>
+               {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+{% endblock %}

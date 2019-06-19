@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block zawartosc %}
+<div class="card-body">
+              {% if message is not none %}
+                <div class="alert alert-danger">{{ message }}</div>
+              {% endif %}
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Quantyty</th>
+                      <th>Type</th>
+                      <th>Commit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <form method="POST" action="">
+                      <tr>
+                         <td><input class="form-control", name="name", alt="Product name"></td>
+                         <td><input class="form-control", name="quantity", value="0", alt="Product quantyty"></td>
+                         <td>
+                            <select class="form-control" name="type" id="type">
+                              {% for row in product_type %}
+                                <option class="form-control" value="{{row.name}}">{{row.name}}</option>
+                              {% endfor %}
+                            </select>
+                         </td>
+                          <td><input class="btn btn-primary" type="submit" value="Add"></td>
+                      </tr>
+                      </form>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% endblock %}

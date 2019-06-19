@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block zawartosc %}
+            <div class="card-body">
+              <h2>Fridge contains</h2>
+              <p>Type something in the input field to search the table:</p>
+              <input class="form-control" id="myInput" type="text" placeholder="Search..">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                  <thead>
+                  <th>Name</th>
+                  <th>Quantyty</th>
+                  <th>Type</th>
+                  <th>Delete</th>
+               </thead>
+               <tbody id="findTable">
+               {% for row in rows %}
+                  <tr>
+                     <td>{{ row.name }}</td>
+                     <td> {{ row.quantity }}</td>
+                     <td> {{ row.type }}</td>
+                     <td><a href="/delete/{{ row.Id }}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                  </tr>
+               {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+{% endblock %}
